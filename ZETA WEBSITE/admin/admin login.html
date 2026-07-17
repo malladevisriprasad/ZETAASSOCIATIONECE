@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZETA Organization</title>
+
+<link rel="icon" type="image/png" href="ZETA_LOGO.png">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+    background:#081b29;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.login-container{
+    width:400px;
+    background:#0f2f52;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    text-align:center;
+}
+
+.logo{
+    width:90px;
+    margin-bottom:15px;
+}
+
+h1{
+    color:#FFD700;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+.input-group{
+    text-align:left;
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    color:#FFD700;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+}
+
+.login-btn{
+    width:100%;
+    padding:12px;
+    background:#FFD700;
+    color:#001f3f;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    background:white;
+}
+
+.register-btn{
+    display:block;
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    background:#28a745;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.register-btn:hover{
+    background:#218838;
+}
+
+.back-link{
+    display:inline-block;
+    margin-top:20px;
+    color:#FFD700;
+    text-decoration:none;
+}
+
+.back-link:hover{
+    text-decoration:underline;
+}
+
+.footer-text{
+    margin-top:25px;
+    font-size:13px;
+    color:#ccc;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="login-container">
+
+<img src="ZETA_LOGO.png" alt="ZETA Logo" class="logo">
+
+<h1>Admin Login</h1>
+
+<p class="subtitle">
+ZETA Organization Administration Portal
+</p>
+
+<form action="admin dashboard.html" method="post">
+
+<div class="input-group">
+<label>Username</label>
+<input type="text" name="username" required>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" name="password" required>
+</div>
+
+<button type="submit" class="login-btn">
+Login
+</button>
+
+<a href="admin register.html" class="register-btn">
+Register New Member
+</a>
+
+</form>
+
+<div class="footer-text">
+Authorized Administrators Only
+</div>
+
+</div>
+
+<script>
+
+const form = document.getElementById("adminloginform");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const adminName =
+    document.getElementById("userName").value;
+
+    const adminEmail =
+    document.getElementById("password").value;
+
+    localStorage.setItem("userName", userName);
+    localStorage.setItem("password", password);
+    
+    alert("Admin login Successful!");
+
+    window.location.href = "admin dashboard.html";
+
+});
+
+</script>
+
+</body>
+</html>

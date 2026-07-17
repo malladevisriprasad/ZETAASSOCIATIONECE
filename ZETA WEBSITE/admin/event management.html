@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZETA Organization</title>
+
+<link rel="icon" type="image/png" href="ZETA_LOGO.png">
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#050816;
+color:white;
+min-height:100vh;
+}
+
+/* Header */
+
+.header{
+background:#001f3f;
+padding:20px;
+text-align:center;
+border-bottom:2px solid #00ffff;
+}
+
+.header h1{
+color:#FFD700;
+margin-bottom:5px;
+}
+
+.header p{
+color:white;
+}
+
+/* Container */
+
+.container{
+width:95%;
+max-width:1300px;
+margin:30px auto;
+}
+
+/* Card */
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(0,255,255,0.3);
+border-radius:15px;
+padding:25px;
+margin-bottom:25px;
+box-shadow:0 0 15px rgba(0,255,255,0.2);
+}
+
+.card h2{
+color:#FFD700;
+margin-bottom:20px;
+}
+
+/* Form */
+
+.input-group{
+margin-bottom:15px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:5px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+width:100%;
+padding:12px;
+border:none;
+outline:none;
+border-radius:8px;
+background:#000;
+color:white;
+}
+
+textarea{
+resize:none;
+height:120px;
+}
+
+/* Buttons */
+
+.btn{
+padding:12px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.add-btn{
+background:#00cfff;
+color:#001f3f;
+}
+
+.edit-btn{
+background:#FFD700;
+color:#001f3f;
+}
+
+.delete-btn{
+background:#ff4d4d;
+color:white;
+}
+
+.btn:hover{
+opacity:0.9;
+}
+
+/* Search */
+
+.search-box{
+margin-bottom:20px;
+}
+
+.search-box input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:black;
+color:white;
+}
+
+/* Table */
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#FFD700;
+color:#001f3f;
+padding:15px;
+}
+
+td{
+padding:15px;
+text-align:center;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+tr:hover{
+background:rgba(0,255,255,0.05);
+}
+
+/* Navigation */
+
+.bottom-buttons{
+margin-top:25px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.nav-btn{
+text-decoration:none;
+background:#FFD700;
+color:#001f3f;
+padding:12px 20px;
+border-radius:10px;
+font-weight:bold;
+}
+
+.nav-btn:hover{
+background:white;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+table{
+font-size:12px;
+}
+
+th,td{
+padding:8px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>ZETA ORGANIZATION</h1>
+
+<p>Event Management System</p>
+
+</div>
+
+<div class="container">
+
+<!-- Add Event -->
+
+<div class="card">
+
+<h2>Add New Event</h2>
+
+<form id="eventForm">
+
+<div class="input-group">
+<label>Event Title</label>
+<input type="text" id="eventTitle" required>
+</div>
+
+<div class="input-group">
+<label>Event Date</label>
+<input type="date" id="eventDate" required>
+</div>
+
+<div class="input-group">
+<label>Event Type</label>
+<select id="eventType">
+<option>Workshop</option>
+<option>Seminar</option>
+<option>Technical Fest</option>
+<option>Industrial Visit</option>
+<option>Hackathon</option>
+</select>
+</div>
+
+<div class="input-group">
+<label>Event Description</label>
+<textarea id="eventDescription"></textarea>
+</div>
+
+<button type="submit" class="btn add-btn">
+Add Event
+</button>
+
+</form>
+
+</div>
+
+<!-- Event List -->
+
+<div class="card">
+
+<h2>Event Records</h2>
+
+<div class="search-box">
+<input
+type="text"
+id="searchInput"
+placeholder="Search Events">
+</div>
+
+<table id="eventTable">
+
+<tr>
+<th>Event Name</th>
+<th>Date</th>
+<th>Type</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+
+<tr>
+<td>Arduino Workshop</td>
+<td>2026-01-15</td>
+<td>Workshop</td>
+<td>Upcoming</td>
+<td>
+<button class="btn edit-btn">Edit</button>
+<button class="btn delete-btn">Delete</button>
+</td>
+</tr>
+
+<tr>
+<td>Embedded Systems Seminar</td>
+<td>2026-02-20</td>
+<td>Seminar</td>
+<td>Upcoming</td>
+<td>
+<button class="btn edit-btn">Edit</button>
+<button class="btn delete-btn">Delete</button>
+</td>
+</tr>
+
+</table>
+
+<div class="bottom-buttons">
+
+<a href="admin dashboard.html" class="nav-btn">
+← Dashboard 
+</a>
+
+<a href="registered.html" class="nav-btn">
+← Registered Members
+</a>
+
+<a href="certificate-management.html" class="nav-btn">
+Certificate Management →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* Add Event */
+
+document.getElementById("eventForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let title =
+document.getElementById("eventTitle").value;
+
+let date =
+document.getElementById("eventDate").value;
+
+let type =
+document.getElementById("eventType").value;
+
+let table =
+document.getElementById("eventTable");
+
+let row =
+table.insertRow(-1);
+
+row.innerHTML = `
+<td>${title}</td>
+<td>${date}</td>
+<td>${type}</td>
+<td>Upcoming</td>
+<td>
+<button class="btn edit-btn">Edit</button>
+<button class="btn delete-btn">Delete</button>
+</td>
+`;
+
+alert("Event Added Successfully");
+
+this.reset();
+
+});
+
+/* Search */
+
+document.getElementById("searchInput")
+.addEventListener("keyup",function(){
+
+let filter =
+this.value.toLowerCase();
+
+let rows =
+document.querySelectorAll("#eventTable tr");
+
+rows.forEach((row,index)=>{
+
+if(index===0) return;
+
+let text =
+row.textContent.toLowerCase();
+
+row.style.display =
+text.includes(filter) ? "" : "none";
+
+});
+
+});
+
+/* Delete */
+
+document.addEventListener("click",function(e){
+
+if(e.target.classList.contains("delete-btn")){
+
+if(confirm("Delete this event?")){
+
+e.target.closest("tr").remove();
+
+}
+
+}
+
+});
+
+/* Edit */
+
+document.addEventListener("click",function(e){
+
+if(e.target.classList.contains("edit-btn")){
+
+alert("Edit Event Feature Coming Soon");
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

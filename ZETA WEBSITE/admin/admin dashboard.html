@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZETA Organization</title>
+
+<link rel="icon" type="image/png" href="ZETA_LOGO.png">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#081b29;
+color:white;
+}
+
+.header{
+background:#001f3f;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.header-left{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.header img{
+width:60px;
+}
+
+.header h1{
+color:#FFD700;
+}
+
+.logout-btn{
+padding:10px 20px;
+background:#ff4d4d;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.logout-btn:hover{
+background:#ff0000;
+}
+
+.dashboard{
+padding:40px;
+}
+
+.welcome{
+background:#0f2f52;
+padding:25px;
+border-radius:15px;
+margin-bottom:30px;
+}
+
+.welcome h2{
+color:#FFD700;
+margin-bottom:10px;
+}
+
+.card-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#0f2f52;
+padding:25px;
+border-radius:15px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px rgba(255,215,0,0.5);
+}
+
+.card h3{
+color:#FFD700;
+margin-bottom:15px;
+}
+
+.card p{
+margin-bottom:20px;
+}
+
+.card a{
+display:inline-block;
+padding:10px 20px;
+background:#FFD700;
+color:#001f3f;
+text-decoration:none;
+font-weight:bold;
+border-radius:8px;
+}
+
+.card a:hover{
+background:white;
+}
+
+.footer{
+margin-top:40px;
+text-align:center;
+padding:20px;
+background:#001f3f;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="header">
+
+<div class="header-left">
+
+<img src="ZETA_LOGO.png" alt="ZETA Logo">
+
+<h1>ZETA Admin Dashboard</h1>
+
+</div>
+
+<a href="admin login.html" class="logout-btn">
+Logout
+</a>
+
+</div>
+
+<div class="dashboard">
+
+<div class="welcome">
+
+<h2>Welcome Administrator</h2>
+
+<p>
+Manage ZETA Organization activities, members, certificates,
+events, and registrations from this dashboard.
+</p>
+
+</div>
+
+<div class="card-container">
+
+<div class="card">
+
+<h3>Membership Applications</h3>
+
+<p>
+Review and approve student membership requests.
+</p>
+
+<a href="admin membership approval.html">
+Open
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Registered Members</h3>
+
+<p>
+View all approved members of ZETA.
+</p>
+
+<a href="registered.html">
+
+Open
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Events Management</h3>
+
+<p>
+Add, edit, and manage organization events.
+</p>
+
+<a href="event management.html">
+Open
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Certificate Management</h3>
+
+<p>
+Generate and download certificates.
+</p>
+
+<a href="certificate management.html">
+Open
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Gallery Management</h3>
+
+<p>
+Upload and manage gallery images.
+</p>
+
+<a href="gallery management.html">
+Open
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Website Settings</h3>
+
+<p>
+Manage website content and configurations.
+</p>
+
+<a href="website setting.html">
+Open
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+<p>© 2026 ZETA Organization Admin Panel</p>
+
+</div>
+
+</body>
+</html>

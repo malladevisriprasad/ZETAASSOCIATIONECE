@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ZETA ORGANIZATION</title>
+
+ <link rel="icon" type="image/png" href="ZETA_LOGO.png">
+
+<style>
+
+body{
+background:#081b29;
+color:white;
+font-family:Arial;
+padding:30px;
+}
+
+.container{
+
+max-width:700px;
+margin:auto;
+
+background:#0f2f52;
+
+padding:30px;
+
+border-radius:20px;
+
+}
+
+h1{
+text-align:center;
+color:#FFD700;
+}
+
+input{
+
+width:100%;
+padding:15px;
+
+margin:15px 0;
+
+}
+
+button{
+
+padding:15px 30px;
+
+background:#FFD700;
+
+border:none;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+.preview img{
+
+width:150px;
+margin:10px;
+
+border-radius:10px;
+
+}
+
+.dashboard-btn{
+
+position:fixed;
+
+top:20px;
+left:20px;
+
+background:#001f3f;
+color:#FFD700;
+
+padding:12px 25px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+border-radius:10px;
+
+border:2px solid #FFD700;
+
+transition:0.3s;
+
+box-shadow:0 0 10px rgba(255,215,0,0.5);
+
+z-index:1000;
+
+}
+
+.dashboard-btn:hover{
+
+background:#FFD700;
+color:#001f3f;
+
+transform:scale(1.05);
+
+box-shadow:0 0 20px #FFD700;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<a href="admin dashboard.html" class="dashboard-btn">
+← Dashboard
+</a>
+
+<div class="container">
+
+<h1>Gallery Management</h1>
+
+<input
+type="file"
+id="upload"
+multiple
+accept="image/*">
+
+<button onclick="uploadImages()">
+
+Upload Images
+
+</button>
+
+<div class="preview"
+id="preview">
+
+</div>
+
+</div>
+
+<script>
+
+function uploadImages(){
+
+let files=
+document.getElementById("upload").files;
+
+let images=[];
+
+for(let i=0;i<files.length;i++){
+
+let url=
+URL.createObjectURL(files[i]);
+
+images.push(url);
+
+}
+
+localStorage.setItem(
+"galleryImages",
+JSON.stringify(images)
+);
+
+alert("Images Uploaded!");
+
+}
+
+</script>
+
+</body>
+
+</html>
